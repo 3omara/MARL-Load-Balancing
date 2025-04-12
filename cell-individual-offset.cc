@@ -7,8 +7,9 @@ void CellIndividualOffset::setOffsetList(std::vector<double>& CioList)
 {
 		// OffstList = CioList; // Removed
 		// Added
-		std::transform(OffsetList.begin(), OffsetList.end(), CioList.begin(),
-               OffsetList.begin(), std::plus<double>());
+		for (unsigned int i = 0; i < CioList.size(); i++){
+			OffsetList.at(i) += CioList.at(i);
+		}
 		//
 }
 
